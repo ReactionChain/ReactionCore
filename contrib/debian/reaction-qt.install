@@ -1,0 +1,6 @@
+usr/local/bin/reaction-qt usr/bin
+share/pixmaps/reaction32.xpm usr/share/pixmaps
+share/pixmaps/reaction16.xpm usr/share/pixmaps
+share/pixmaps/reaction128.png usr/share/pixmaps
+debian/reaction-qt.desktop usr/share/applications
+debian/reaction-qt.protocol usr/share/kde4/services/

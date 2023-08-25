@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/reaction_ar.qm</file>
+        <file alias="bg">locale/reaction_bg.qm</file>
+        <file alias="de">locale/reaction_de.qm</file>
+        <file alias="en">locale/reaction_en.qm</file>
+        <file alias="es">locale/reaction_es.qm</file>
+        <file alias="fi">locale/reaction_fi.qm</file>
+        <file alias="fr">locale/reaction_fr.qm</file>
+        <file alias="it">locale/reaction_it.qm</file>
+        <file alias="ja">locale/reaction_ja.qm</file>
+        <file alias="ko">locale/reaction_ko.qm</file>
+        <file alias="nl">locale/reaction_nl.qm</file>
+        <file alias="pl">locale/reaction_pl.qm</file>
+        <file alias="pt">locale/reaction_pt.qm</file>
+        <file alias="ro">locale/reaction_ro.qm</file>
+        <file alias="ru">locale/reaction_ru.qm</file>
+        <file alias="sk">locale/reaction_sk.qm</file>
+        <file alias="th">locale/reaction_th.qm</file>
+        <file alias="tr">locale/reaction_tr.qm</file>
+        <file alias="vi">locale/reaction_vi.qm</file>
+        <file alias="zh_CN">locale/reaction_zh_CN.qm</file>
+        <file alias="zh_TW">locale/reaction_zh_TW.qm</file>
+    </qresource>
+</RCC>

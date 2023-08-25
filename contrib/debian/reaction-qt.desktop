@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Reaction Core
+Comment=Reaction P2P Cryptocurrency
+Comment[de]=Verbinde mit dem Reaction peer-to-peer Netzwerk
+Comment[fr]=Reaction, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Reaction, eşten eşe kriptografik sanal para birimi
+Exec=reaction-qt %u
+Terminal=false
+Type=Application
+Icon=reaction128
+MimeType=x-scheme-handler/reaction;
+Categories=Office;Finance;
