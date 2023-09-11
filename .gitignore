@@ -4,6 +4,8 @@ todo.txt
 build-ampere.sh
 build-linux.sh
 build-osx.sh
+build-aarch64-qt.sh
+build-aarch-vps.sh
 build-win.sh
 reset-files.bash
 reaction-build*/
