@@ -1,4 +1,4 @@
-Reaction Core v1.1.15
+Reaction Core v1.2.0
 ===========================
 
 What is Reaction?
