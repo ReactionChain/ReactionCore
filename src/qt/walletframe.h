@@ -64,6 +64,8 @@ public:
 public Q_SLOTS:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
+        /** Switch to events (transactions) page */
+    void gotoEventsPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to smartnode page */

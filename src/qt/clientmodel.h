@@ -68,6 +68,10 @@ public:
     CDeterministicMNList getSmartnodeList() const;
     void refreshSmartnodeList();
 
+    void setEventsList(const CDeterministicMNList& mnList);
+    CDeterministicMNList getEventsList() const;
+    void refreshEventsList();
+
     //! Returns enum BlockSource of the current importing/syncing state
     enum BlockSource getBlockSource() const;
     //! Return warnings to be displayed in status bar

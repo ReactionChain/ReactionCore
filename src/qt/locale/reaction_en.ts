@@ -1562,6 +1562,167 @@
     </message>
 </context>
 <context>
+    <name>EventsList</name>
+    <message>
+        <location filename="../forms/eventslist.ui" line="+14"/>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <location line="-33"/>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <location line="-44"/>
+        <source>Filter List:</source>
+        <translation>Filter List:</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Filter smartnode list</source>
+        <translation>Filter smartnode list</translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Node Count:</source>
+        <translation>Node Count:</translation>
+    </message>
+    <message>
+        <location line="-23"/>
+        <source>Show only smartnodes this wallet has keys for.</source>
+        <translation>Show only smartnodes this wallet has keys for.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>My smartnodes only</source>
+        <translation>My smartnodes only</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Service</source>
+        <translation>Service</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>PoSe Score</source>
+        <translation>PoSe Score</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Registered</source>
+        <translation>Registered</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Last Paid</source>
+        <translation>Last Paid</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Next Payment</source>
+        <translation>Next Payment</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Payout Address</source>
+        <translation>Payout Address</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Operator Reward</source>
+        <translation>Operator Reward</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Collateral Address</source>
+        <translation>Collateral Address</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Owner Address</source>
+        <translation>Owner Address</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Voting Address</source>
+        <translation>Voting Address</translation>
+    </message>
+    <message>
+        <location filename="../eventslist.cpp" line="+95"/>
+        <source>Copy ProTx Hash</source>
+        <translation>Copy ProTx Hash</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copy Collateral Outpoint</source>
+        <translation>Copy Collateral Outpoint</translation>
+    </message>
+    <message>
+        <location line="+101"/>
+        <source>Updating...</source>
+        <translation>Updating...</translation>
+    </message>
+    <message>
+        <location line="+37"/>
+        <source>ENABLED</source>
+        <translation>ENABLED</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>POSE_BANNED</source>
+        <translation>POSE_BANNED</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+14"/>
+        <location line="+23"/>
+        <source>UNKNOWN</source>
+        <translation>UNKNOWN</translation>
+    </message>
+    <message>
+        <location line="-10"/>
+        <source>to %1</source>
+        <translation>to %1</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>to UNKNOWN</source>
+        <translation>to UNKNOWN</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>but not claimed</source>
+        <translation>but not claimed</translation>
+    </message>
+    <message>
+        <location line="-12"/>
+        <source>NONE</source>
+        <translation>NONE</translation>
+    </message>
+    <message>
+        <location line="-161"/>
+        <source>Filter by any property (e.g. address or protx hash)</source>
+        <translation>Filter by any property (e.g. address or protx hash)</translation>
+    </message>
+    <message>
+        <location line="+63"/>
+        <location line="+170"/>
+        <source>Please wait...</source>
+        <translation>Please wait...</translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>Additional information for DIP3 Smartnode %1</source>
+        <translation>Additional information for DIP3 Smartnode %1</translation>
+    </message>
+</context>
+<context>
     <name>ModalOverlay</name>
     <message>
         <location filename="../forms/modaloverlay.ui" line="+14"/>

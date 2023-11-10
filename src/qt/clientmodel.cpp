@@ -80,13 +80,35 @@ void ClientModel::setSmartnodeList(const CDeterministicMNList& mnList)
     Q_EMIT smartnodeListChanged();
 }
 
+void ClientModel::setEventsList(const CDeterministicMNList& mnList)
+{
+    LOCK(cs_mnlinst);
+    if (mnListCached.GetBlockHash() == mnList.GetBlockHash()) {
+        return;
+    }
+    mnListCached = mnList;
+    Q_EMIT smartnodeListChanged();
+}
+
 CDeterministicMNList ClientModel::getSmartnodeList() const
 {
     LOCK(cs_mnlinst);
     return mnListCached;
 }
 
+CDeterministicMNList ClientModel::getEventsList() const
+{
+    LOCK(cs_mnlinst);
+    return mnListCached;
+}
+
 void ClientModel::refreshSmartnodeList()
+{
+    LOCK(cs_mnlinst);
+    setSmartnodeList(m_node.evo().getListAtChainTip());
+}
+
+void ClientModel::refreshEventsList()
 {
     LOCK(cs_mnlinst);
     setSmartnodeList(m_node.evo().getListAtChainTip());
@@ -269,6 +291,11 @@ static void BlockTipChanged(ClientModel *clientmodel, bool initialSync, int heig
 }
 
 static void NotifySmartnodeListChanged(ClientModel *clientmodel, const CDeterministicMNList& newList)
+{
+    clientmodel->setSmartnodeList(newList);
+}
+
+static void NotifyEventsListChanged(ClientModel *clientmodel, const CDeterministicMNList& newList)
 {
     clientmodel->setSmartnodeList(newList);
 }

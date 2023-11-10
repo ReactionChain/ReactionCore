@@ -13,6 +13,7 @@
 #include <qt/overviewpage.h>
 #include <qt/receivecoinsdialog.h>
 #include <qt/sendcoinsdialog.h>
+#include <qt/eventslist.h>
 #include <qt/sendfuturesdialog.h>
 #include <qt/signverifymessagedialog.h>
 #include <qt/transactionrecord.h>
@@ -40,8 +41,8 @@ WalletView::WalletView(QWidget* parent) :
 {
     // Create tabs
     overviewPage = new OverviewPage();
-
     transactionsPage = new QWidget(this);
+    
     QVBoxLayout *vbox = new QVBoxLayout();
     QHBoxLayout *hbox_buttons = new QHBoxLayout();
     transactionView = new TransactionView(this);
@@ -70,7 +71,9 @@ WalletView::WalletView(QWidget* parent) :
 
     hbox_buttons->addWidget(exportButton);
     vbox->addLayout(hbox_buttons);
+    
     transactionsPage->setLayout(vbox);
+    
 
     receiveCoinsPage = new ReceiveCoinsDialog();
     sendCoinsPage = new SendCoinsDialog();
@@ -79,9 +82,12 @@ WalletView::WalletView(QWidget* parent) :
 
     usedSendingAddressesPage = new AddressBookPage(AddressBookPage::ForEditing, AddressBookPage::SendingTab, this);
     usedReceivingAddressesPage = new AddressBookPage(AddressBookPage::ForEditing, AddressBookPage::ReceivingTab, this);
-
+    
+    
     addWidget(overviewPage);
+    
     addWidget(transactionsPage);
+    
     addWidget(receiveCoinsPage);
     addWidget(sendCoinsPage);
     addWidget(sendFuturesPage);
@@ -90,7 +96,10 @@ WalletView::WalletView(QWidget* parent) :
     QSettings settings;
     if (settings.value("fShowSmartnodesTab").toBool()) {
         smartnodeListPage = new SmartnodeList();
+        eventsPage = new EventsList();
         addWidget(smartnodeListPage);
+        
+        addWidget(eventsPage);
     }
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
@@ -162,9 +171,11 @@ void WalletView::setClientModel(ClientModel *_clientModel)
     overviewPage->setClientModel(_clientModel);
     sendCoinsPage->setClientModel(_clientModel);
     coinJoinCoinsPage->setClientModel(_clientModel);
+    //eventsPage->setClientModel(_clientModel);
     QSettings settings;
     if (settings.value("fShowSmartnodesTab").toBool()) {
         smartnodeListPage->setClientModel(_clientModel);
+        
     }
 }
 
@@ -175,9 +186,11 @@ void WalletView::setWalletModel(WalletModel *_walletModel)
     // Put transaction list in tabs
     transactionView->setModel(_walletModel);
     overviewPage->setWalletModel(_walletModel);
+   
     QSettings settings;
     if (settings.value("fShowSmartnodesTab").toBool()) {
         smartnodeListPage->setWalletModel(_walletModel);
+        //eventsPage->setWalletModel(_walletModel);
     }
     receiveCoinsPage->setModel(_walletModel);
     sendCoinsPage->setModel(_walletModel);
@@ -247,6 +260,11 @@ void WalletView::gotoOverviewPage()
 void WalletView::gotoHistoryPage()
 {
     setCurrentWidget(transactionsPage);
+}
+
+void WalletView::gotoEventsPage()
+{
+    setCurrentWidget(eventsPage);
 }
 
 void WalletView::gotoSmartnodePage()

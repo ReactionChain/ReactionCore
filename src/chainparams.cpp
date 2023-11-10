@@ -524,10 +524,10 @@ public:
 
         // The best chain should have at least this much work.
         //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000c2a6d13d4138"); // 0
-        consensus.nMinimumChainWork = uint256S("0x0"); // 0
+        consensus.nMinimumChainWork = uint256S("00000000000000000000000000000000000000000000000000001340ae2c778f"); // 0
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0"); // 0
+        consensus.defaultAssumeValid = uint256S("0x7a3733700a4c537070749d979f95007bbc1f7952a8cb0fd74dff9286704d2556"); // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -624,14 +624,17 @@ public:
         fBIP9CheckSmartnodesUpgraded = true;
 
         checkpointData = {
-          {  {0, uint256S("0xf3e7df1c335fb2866ca7ddbc30adecd9bc5b98e980182ac95aafc23799cbc79b")} } 
+          {  {0, uint256S("0xf3e7df1c335fb2866ca7ddbc30adecd9bc5b98e980182ac95aafc23799cbc79b")},
+             {8103, uint256S("f31454e5e31544694e87d8d123daf23683f16664446987ab63f2cf38d117ff84")}, 
+             {12063, uint256S("6569c5d0894559e6c0b6090a2e00f13dcd03b7a83dfae4d9c04c6c1420bd4ccb")},
+             {20005, uint256S("ba0ab9d847830367c20adcbbd6d3f3d02665d36369766eff3707e8f8cbbf715d")} } 
 	};
 
         chainTxData = ChainTxData{
-          1691601216,   // * UNIX timestamp of last known number of transactions (Block 0)
-              0,   // * total number of transactions between genesis and that timestamp
+          1697121479,   // * UNIX timestamp of last known number of transactions (Block 0)
+              25400,   // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-              0    // * estimated number of transactions per second after that timestamp
+              0.05    // * estimated number of transactions per second after that timestamp
         };
     }
 };

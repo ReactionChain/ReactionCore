@@ -7,6 +7,7 @@
 
 #include <amount.h>
 #include <qt/smartnodelist.h>
+#include <qt/eventslist.h>
 
 #include <QStackedWidget>
 
@@ -41,6 +42,8 @@ public:
     explicit WalletView(QWidget* parent);
     ~WalletView();
 
+    
+
     void setBitcoinGUI(BitcoinGUI *gui);
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -63,6 +66,7 @@ private:
 
     OverviewPage *overviewPage;
     QWidget *transactionsPage;
+   
     ReceiveCoinsDialog *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
     SendFuturesDialog *sendFuturesPage;
@@ -70,6 +74,7 @@ private:
     AddressBookPage *usedSendingAddressesPage;
     AddressBookPage *usedReceivingAddressesPage;
     SmartnodeList *smartnodeListPage;
+    EventsList *eventsPage;
 
     TransactionView *transactionView;
 
@@ -81,6 +86,8 @@ public Q_SLOTS:
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
+    /** Switch to events (transactions) page */
+    void gotoEventsPage();
     /** Switch to smartnode page */
     void gotoSmartnodePage();
     /** Switch to receive coins page */

@@ -36,6 +36,7 @@
 #include <ui_interface.h>
 #include <util.h>
 #include <qt/smartnodelist.h>
+#include <qt/eventslist.h>
 
 #include <iostream>
 
@@ -91,6 +92,7 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const NetworkStyle* networkStyle,
     appToolBarLogoAction(0),
     overviewButton(0),
     historyButton(0),
+    eventsButton(0),
     smartnodeButton(0),
     quitAction(0),
     sendCoinsButton(0),
@@ -621,6 +623,11 @@ void BitcoinGUI::createToolBars()
         historyButton->setStatusTip(tr("Browse transaction history"));
         tabGroup->addButton(historyButton);
 
+        eventsButton = new QToolButton(this);
+        eventsButton->setText(tr("&Events"));
+        eventsButton->setStatusTip(tr("Browse events history"));
+        tabGroup->addButton(eventsButton);
+
         coinJoinCoinsButton = new QToolButton(this);
         coinJoinCoinsButton->setText(coinJoinCoinsMenuAction->text());
         coinJoinCoinsButton->setStatusTip(coinJoinCoinsMenuAction->statusTip());
@@ -640,6 +647,7 @@ void BitcoinGUI::createToolBars()
         connect(coinJoinCoinsButton, SIGNAL(clicked()), this, SLOT(gotoCoinJoinCoinsPage()));
         connect(receiveCoinsButton, SIGNAL(clicked()), this, SLOT(gotoReceiveCoinsPage()));
         connect(historyButton, SIGNAL(clicked()), this, SLOT(gotoHistoryPage()));
+        connect(eventsButton, SIGNAL(clicked()), this, SLOT(gotoEventsPage()));
 
         // Give the selected tab button a bolder font.
         connect(tabGroup, SIGNAL(buttonToggled(QAbstractButton *, bool)), this, SLOT(highlightTabButton(QAbstractButton *, bool)));
@@ -854,6 +862,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
         coinJoinCoinsButton->setEnabled(enabled && clientModel->coinJoinOptions().isEnabled());
         receiveCoinsButton->setEnabled(enabled);
         historyButton->setEnabled(enabled);
+        eventsButton->setEnabled(enabled);
         if (smartnodeButton != nullptr) {
             QSettings settings;
             smartnodeButton->setEnabled(enabled && settings.value("fShowSmartnodesTab").toBool());
@@ -1042,6 +1051,12 @@ void BitcoinGUI::gotoHistoryPage()
 {
     historyButton->setChecked(true);
     if (walletFrame) walletFrame->gotoHistoryPage();
+}
+
+void BitcoinGUI::gotoEventsPage()
+{
+    eventsButton->setChecked(true);
+    if (walletFrame) walletFrame->gotoEventsPage();
 }
 
 void BitcoinGUI::gotoSmartnodePage()

@@ -113,6 +113,7 @@ private:
     QToolButton *coinJoinCoinsButton;
     QToolButton *receiveCoinsButton;
     QToolButton *historyButton;
+    QToolButton *eventsButton;
     QToolButton *smartnodeButton;
     QAction* appToolBarLogoAction;
     QAction *quitAction;
@@ -273,6 +274,8 @@ private Q_SLOTS:
 #ifdef ENABLE_WALLET
     /** Switch to overview (home) page */
     void gotoOverviewPage();
+    /** Switch to events (transactions) page */
+    void gotoEventsPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to smartnode page */
